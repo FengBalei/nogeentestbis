@@ -1,0 +1,163 @@
+:root{
+    --green: #2E8B57;
+    --beige:beige;
+}
+@font-face {
+    font-family:"Scrabble";
+    src: url("../fonts/Tilez-8O8A.ttf");
+}
+@font-face {
+    font-family:"ScrabbleText" ;
+    src: url("../fonts/IBMPlexSans-Light.ttf");
+}
+
+html{
+    display: block;
+    background-color:var(--beige);
+    background-attachment: fixed;
+}
+
+h1, h2{
+    font-family:"Scrabble";
+    font-size: 3.5em;
+    font-weight: normal;
+    margin-bottom: 0px;
+}
+
+body{
+    margin: 0px;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 2fr 7fr 3fr;
+    grid-template-rows: 1fr auto 0.5fr;
+    grid-template-areas: "header header header" "nav article section" "footer footer footer";
+}
+
+header{
+    color: var(--beige);
+    grid-area: header;
+    background-image: url("../images/scrabble.jpg");
+    background-size: cover;
+}
+
+header img{
+    width: 150px;
+    height: 90px;
+    margin-top: 30px;
+    margin-right: 10px;
+    border: 2px solid var(--beige);
+}
+
+header > p{
+    font-family:"Scrabble";
+    font-size: 8em;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: lighter;
+}
+
+
+nav{
+    grid-area: nav;
+    background-color: var(--green);
+}
+
+nav ul{
+    margin-top: 20px;
+    list-style-type: none;
+    padding-left: 0;
+    text-align: center;
+}
+
+nav ul li{
+    font-size: 2em;
+    background-color: var(--green);
+    padding: 20px;
+    display: block;
+}
+
+nav ul li a{
+    text-decoration: none;
+    font-family: "ScrabbleText" ;
+    color: var(--beige);
+}
+
+nav ul li a:hover{
+    font-family: "Scrabble";
+    font-size: 1.5em;
+    border: 2px dashed var(--beige);
+}
+
+main{
+    grid-area: article;
+}
+
+article{
+    position: relative;
+    padding: 10px;
+    font-family: "ScrabbleText";
+    background-color: var(--beige);
+    color: var(--green);
+}
+
+section{
+    grid-area: section;
+    padding: 10px;
+    background-color: var(--green);
+    color: var(--beige);
+}
+
+section > h2{
+    margin-left: 10px;
+}
+
+aside{
+
+    color:var(--beige);
+    font-family: "ScrabbleText";
+}
+
+aside > figure{
+    margin-left: 10px;
+}
+
+aside figure img{
+    width: 50%;
+    height: auto;
+    border: 2px solid var(--green);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+figure>figcaption
+{
+    text-align: center;
+}
+
+aside > h3 {
+    font-family: "ScrabbleText";
+    font-size: 1.8em;
+    font-weight: lighter;
+    margin-left: 10px;
+}
+
+ol>li{
+    padding-left: 5px;
+    padding-bottom: 10px;
+}
+
+footer{
+    grid-area: footer;
+    text-align: center;
+    background-image: url("../images/scrabble.jpg");
+    background-size: cover;
+}
+
+footer small{
+    color: var(--beige);
+    font-family: "ScrabbleText";
+    display: block;
+    margin-top: 40px;
+}

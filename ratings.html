@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/mainstyle.css">
+    <link rel="stylesheet" href="css/ratingsStyle.css">
+    <link rel="stylesheet" href="css/responsiveStyle.css">
+    <title>Mijn favoriete spel</title>
+</head>
+
+<body>
+    <header>
+        <p>SCRABBLE <img title="scrabble-box" src="images/ScrabbleDoos.JPG" alt="scrabble" /></p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="personages.html">PERSONAGES</a></li>
+            <li><a href="ratings.html">RATINGS</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Benieuwd wat anderen van dit spel vinden</h1>
+        <article>
+            <h2>Gamespot</h2>
+                <figure>
+                    <a href="https://www.gamespot.com/reviews/scrabble-review/1900-2549233/" target="_blank">
+                        <img title="review-gamespot" src="images/gamespot.jpg" alt="gamespot"></a>
+                    <figcaption>SCORE: 5,2/10</figcaption>
+                </figure>
+            <p>Gamespot geeft een score van 5,2 op tien aan Scrabble op de PlayStation. De website hekelt de
+                traagheid en simpelheid van het design. In tegenstelling tot andere PlayStation games zin er
+                geen
+                geen wow-effecten toegevoegd. Speel je tegen de computer zelf, dan kan je deze makkelijk
+                verslaan.
+                Speel je tegen een andere speler, kan je jammergenoeg zijn letters zien. 5,4 lijkt dan nog een
+                hoge
+                score.</p>
+        </article>
+        <article>
+            <h2>Metacritic</h2>
+                <figure>
+                    <a href="https://www.metacritic.com/game/ios/scrabble-for-ipad" target="_blank">
+                        <img title="review-metacritic" src="images/metacritic.jpg" alt="metacritic"></a>
+                    <figcaption>SCORE: 94/100</figcaption>
+                </figure>   
+            <p>De reviewers van metacritic geven een gemiddelde score van 94/100 voor de tablet versie van
+                Scrabble. Makkelijk in gebruik met ingebouwde controleregels. Het is makkelijk mee te nemen,
+                geen gesukkel met de blokjes. En als laatste rekent het de score uit voor jou. Geen hoofdrekenen
+                meer nodig.</p>
+        </article>
+        <article>
+            <h2>IGN</h2>
+                <figure>
+                    <a href="https://www.ign.com/articles/2009/04/06/scrabble-review" target="_blank">
+                        <img title="review-ign" src="images/ign.jpg" alt="ign"></a>
+                    <figcaption>SCORE: 7,4/10</figcaption>
+
+                </figure>
+            <p>ING geeft eens core van 7,4/10 voor de Scrabble versie voor Nintendo en Sony PSP. Handig om mee
+                te nemen maar het heeft niet veel toegevoegde waarde in vergelijking met het bordspel. Als je
+                alleen speelt, stelt de AI teleur. Speel je met meerdere kan het wel es leuk zijn.</p>
+        </article>
+        <form method="post" action="https://jkorpela.fi/cgi-bin/echo.cgi" autocomplete="on">
+            <h2>Ook jouw mening telt!</h2>
+            <fieldset>
+                <div>
+                    <label for="score-review" id="score">Score - tussen 0 en 10:</label>
+                    <span>10</span><input type="range" id="score-review" name="score" min="0" max="10"><span>0</span>
+                </div>
+                <div>
+                    <label for="your-rating">Schrijf hier je review?</label>
+                    <textarea id="your-rating" name="rating" rows="10" cols="50" maxlength="500"></textarea>
+                </div>
+            </fieldset>
+            <div id="submit">
+                <input type="submit" value="Verstuur" />
+            </div>
+        </form>
+    </main>
+    <footer>
+        <small>&copy; 2022 - Charlotte Van Parys</small>
+    </footer>
+</body>
+
+</html>
