@@ -1,2 +1,5 @@
 #negeer alle txts in map images
 images/*.txt
+nieuwetest.pdf
+#nog een test
+*.pdf
