@@ -1,0 +1,18 @@
+﻿@model PlatesIndexViewModel
+
+<article>
+    <h2>Huisnummers</h2>
+    <p>Je huisnummer is belangrijk. Iemand komt op bezoek, de postbode heeft een brief. Zonder nummer raakt iedereen verloren. Versier je gevel daarom met een duidelijk nummer.</p>
+    <section>
+        @foreach (PlatesDetailViewModel plate in Model.Plates)
+        {
+            <div class="card">
+                <a asp-controller="Plates" asp-action="ShowPlateDetail" asp-route-id="@plate.Id">
+                    <img asp-append-version="true" class="index-view" src="../images/@(plate.Type)-@(plate.Material).jpg" alt="@plate.Type-@plate.Material" />
+                    @plate.Type-@plate.Material
+                </a>
+            </div>
+        }
+    </section>
+</article>
+<partial name="PlatesNavigationPartialView" />

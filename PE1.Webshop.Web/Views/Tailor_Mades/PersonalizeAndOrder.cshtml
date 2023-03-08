@@ -1,0 +1,13 @@
+﻿@model Tailor_MadeDetailViewModel
+
+<h2>Personaliseer je keuze en bestel.</h2>
+<section class="product-detail">
+    <div class="info">
+        <h3>@ViewBag.Title</h3>
+        <p>Je bestelde de @Model.GiftObject met artikelnummer ="@Model.Id".</p>
+        <p>UNDER CONSTRUCTION</p>
+    </div>
+    <div class="image">
+        <img asp-append-version="true" class="detail-view" src="/images/Tailor-Made-@(Model.GiftObject).jpg" alt="@Model.GiftObject" />
+    </div>
+</section>

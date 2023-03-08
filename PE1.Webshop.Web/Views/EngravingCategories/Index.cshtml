@@ -1,0 +1,29 @@
+﻿@model EngravingCategoriesIndexViewModel
+<article>
+<h2>Ontdek onze categoriën</h2>
+<section>
+@foreach (EngravingCategoriesDetailViewModel category in Model.EngravingCategories)
+{
+    string href;
+    if (category.Name == "Losse Tekens")
+    {
+        href = "/LooseSigns";
+    }
+    else if (category.Name == "Gepersonaliseerde gravures")
+    {
+        href = "/Tailor_Mades";
+    }
+    else
+    {
+        href = "/Plates";
+    }
+    <div class="card">
+        <h4 class="category">@category.Name</h4>
+        <a asp-controller="@href" asp-action="Index">
+            <img asp-append-version="true" class="index-view" src="~/images/Image@(Model.EngravingCategories.IndexOf(category)).jpg" alt="@category.Name">
+        </a>
+        <label>@category.Description</label>
+    </div>
+}
+</section>
+</article>

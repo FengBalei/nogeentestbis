@@ -1,0 +1,26 @@
+﻿
+@model LooseSignsIndexViewModel 
+
+<article>
+    <h2>Losse Tekens</h2>
+    <p>Losse tekens zijn uitgefreezde letters of nummers in een kleur, grootte en materiaal naar keuze. Je kan kiezen uit Aluminium, hout, Plexi of Kunststof. Hier vind je een overzicht van alle losse tekens die verkrijgbaar zijn.Per teken kan je zelf de grootte, kleur en het materiaal kiezen.</p>
+   
+        <h3>Bekijk ons aanbod en klik om te personaliseren:</h3>
+    <section>
+        @foreach (LooseSignsDetailViewModel looseSign in Model.LooseSigns)
+        {
+            <div class="card">
+                <a asp-controller="LooseSigns" asp-action="ShowLooseSignDetail" asp-route-id="@looseSign.Id">
+                @if (looseSign.Type == "Losse Letter")
+                {
+                    <img asp-append-version="true" class="detail-view" src="../images/LooseLetter-@(looseSign.Material).jpg" alt="LooseLetter-@looseSign.Material" />
+                }
+                else
+                {
+                    <img asp-append-version="true" class="detail-view" src="../images/LooseNumber-@(looseSign.Material).jpg" alt="LooseNumber-@looseSign.Material" />
+                }
+               @looseSign.Type - @looseSign.Material</a>
+            </div>
+        }
+    </section>
+</article>

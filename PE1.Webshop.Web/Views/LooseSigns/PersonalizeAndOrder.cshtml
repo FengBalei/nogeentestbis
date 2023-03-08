@@ -1,0 +1,22 @@
+﻿@model LooseSignsDetailViewModel
+
+
+<h2>Personaliseer je keuze en bestel.</h2>
+<section class="product-detail">
+    <div class="info">
+        <p>@ViewBag.Title</p>
+        <p>Je bestelde de/het <b>@Model.Type</b> met artikelnummer ="@Model.Id".</p>
+        <p>Kies hier de kleur, de groote en de/het @Model.Type</p>
+        <p>UNDER CONSTRUCTION</p>
+    </div>
+    <div class="image">
+        @if (Model.Type == "Losse Letter")
+        {
+            <img asp-append-version="true" class="detail-view" src="/images/LooseLetter-@(Model.Material).jpg" alt="LooseLetter-@Model.Material" />
+        }
+        else
+        {
+            <img asp-append-version="true" class="detail-view" src="/images/LooseNumber-@(Model.Material).jpg" alt="LooseNumber-@Model.Material" />
+        }
+    </div>
+</section>

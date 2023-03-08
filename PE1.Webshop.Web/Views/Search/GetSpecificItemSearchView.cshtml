@@ -1,0 +1,48 @@
+﻿
+<article>
+    <h3>Bekijk ons aanbod en klik om het detail te zien:</h3>
+    <section>
+        @foreach (IEngravableBaseDetailViewModel engravable in Model.IEngravables)
+        {
+            if (engravable is LooseSignsDetailViewModel && engravable.Type == "Losse Letter")
+            {
+                LooseSignsDetailViewModel newEngravable = (LooseSignsDetailViewModel)engravable;
+                <div class="card">
+                    <a asp-controller="LooseSigns" asp-action="ShowLooseSignDetail" asp-route-id="@engravable.Id">
+                        <img asp-append-version="true" class="index-view" src="/images/LooseLetter-@(newEngravable.Material).jpg" alt="@engravable.Type-@newEngravable.Material" />
+                        <p>@engravable.Type van de categorie @engravable.EngravingCategory.Name</p>
+                    </a>
+                </div>
+            }
+            else if (engravable is LooseSignsDetailViewModel && engravable.Type == "Los Nummer")
+            {
+                LooseSignsDetailViewModel newEngravable = (LooseSignsDetailViewModel)engravable;
+                <div class="card">
+                    <a asp-controller="LooseSigns" asp-action="ShowLooseSignDetail" asp-route-id="@engravable.Id">
+                        <img asp-append-version="true" class="index-view" src="/images/LooseNumber-@(newEngravable.Material).jpg" alt="@engravable.Type-@newEngravable.Material" />
+                        <p>@engravable.Type van de categorie @engravable.EngravingCategory.Name</p>
+                    </a>
+                </div>
+            }
+            else if (engravable is PlatesDetailViewModel)
+            {
+                PlatesDetailViewModel newEngravable = (PlatesDetailViewModel)engravable;
+                <div class="card">
+                    <a asp-controller="Plates" asp-action="ShowPlateDetail" asp-route-id="@engravable.Id">
+                        <img asp-append-version="true" class="index-view" src="/images/@(engravable.Type)-@(newEngravable.Material).jpg" alt="@engravable.Type-@newEngravable.Material" />
+                        <p>@engravable.Type van de categorie @engravable.EngravingCategory.Name</p>
+                    </a>
+                </div>
+            }
+            else
+            {
+                Tailor_MadeDetailViewModel newEngravable = (Tailor_MadeDetailViewModel)engravable;
+                <div class="card">
+                    <a asp-controller="Tailor_Mades" asp-action="ShowTailorMadeDetail" asp-route-id="@engravable.Id">
+                    <img asp-append-version="true" class="index-view" src="~/images/Tailor-Made-@(newEngravable.GiftObject).jpg" alt="@engravable.Type-@newEngravable.GiftObject" />
+                    <p>@engravable.Type van de categorie @engravable.EngravingCategory.Name</p></a>
+                </div>
+            }
+        }
+    </section>
+</article>

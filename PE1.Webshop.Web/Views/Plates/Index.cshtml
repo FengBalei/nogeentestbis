@@ -1,0 +1,47 @@
+﻿@model PlateCategoriesIndexViewModel
+
+<article>
+    <h2>Naam en nummerplaten en dierenlabels</h2>
+
+    <p>Onze naam en nummerplaten kunnen in meerdere situaties gebruikt worden: als naambord voor aan je voordeur, of een huisnummer voor boven je bus. Ben je een vrije beroeper? Dan bieden wij grote naamborden aan voor aan je gevel. Binnen ons aanbod van naamplaten zijn er ook de dierenlabels. Wil je dat je geliefde viervoeter altijd veilig thuiskomt, hang dan een mooie label met zijn naam en jouw contactgegevens rond zijn nek.</p>
+
+    <h3>Binnen deze categorie bieden wij 3 soorten aan. Klik op één van deze soorten en bekijk ons aanbod. Of klik meteen op 'Alle platen'' wanneer je een volledig overzicht wenst.</h3>
+    <section>
+        @foreach (PlateCategoriesDetailViewModel plateCategoriesDetailViewModel in Model.PlateCategories)
+        {
+            if (plateCategoriesDetailViewModel.TypeName == "Huisnummer")
+            {
+                <div class="card">
+                    <a asp-controller="Plates" asp-action="GetAllHouseNumberPlates">
+                        <img asp-append-version="true" class="index-view" src="~/images/@(plateCategoriesDetailViewModel.TypeName).jpg" alt="@(plateCategoriesDetailViewModel.TypeName)">
+                        <p>@plateCategoriesDetailViewModel.TypeName</p>
+                    </a>
+                </div>
+            }
+            else if (plateCategoriesDetailViewModel.TypeName == "Naamplaat")
+            {
+                <div class="card">
+                    <a asp-controller="Plates" asp-action="GetAllNamePlates">
+                        <img asp-append-version="true" class="index-view" src="~/images/@(plateCategoriesDetailViewModel.TypeName).jpg" alt="@(plateCategoriesDetailViewModel.TypeName)">
+                        <p>@plateCategoriesDetailViewModel.TypeName</p>
+                    </a>
+                </div>
+            }
+            else
+            {
+                <div class="card">
+                    <a asp-controller="Plates" asp-action="GetAllPetLabels">
+                        <img asp-append-version="true" class="index-view" src="~/images/@(plateCategoriesDetailViewModel.TypeName).jpg" alt="@(plateCategoriesDetailViewModel.TypeName)">
+                        <p>@plateCategoriesDetailViewModel.TypeName</p>
+                    </a>
+                </div>
+            }
+        }
+        <div class="card">
+            <a asp-controller="Plates" asp-action="GetAllPlates">
+                <img asp-append-version="true" class="index-view" src="~/images/Image1.jpg" alt="AllPlates">
+                <p>Alle platen</p>
+            </a>
+        </div>
+    </section>
+</article>

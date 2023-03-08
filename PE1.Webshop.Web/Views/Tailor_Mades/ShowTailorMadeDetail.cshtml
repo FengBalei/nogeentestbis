@@ -1,0 +1,23 @@
+﻿@model Tailor_MadeDetailViewModel
+
+<div>
+    <h3 class="detail">
+        Gepersonaliseerde voorwerpen - @Model.GiftObject
+    </h3>
+    <section class="product-detail">
+        <div class="image">
+            <img asp-append-version="true" class="detail-view" src="/images/Tailor-Made-@(Model.GiftObject).jpg" alt="@Model.GiftObject" />
+        </div>
+        <div class="info">
+            <h4>Artikel: @Model.GiftObject </h4>
+            <p><small>Artikelnummer: @Model.Id</small></p>
+            <h5>Eigenschappen van deze:</h5>
+            <ul>
+                <li>€@Model.HourlyPrice</li>
+                <li>@Model.GiftObject</li>
+            </ul>
+            <h5>Een tekst of afbeelding kan je opladen in de volgende stap.</h5>
+            <partial name="_PersonalizeAndOrderPartialView" />
+        </div>
+    </section>
+</div>

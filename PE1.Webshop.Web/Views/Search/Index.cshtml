@@ -1,0 +1,15 @@
+﻿<article>
+    <h2>@ViewBag.Title</h2>
+    <p>Geen tijd om door ons hele gamma te scrollen. Misschien kan één van onze snelle zoekfuncties je makkelijk op weg helpen</p>
+    <section>
+        <div class="card">
+            <img src="~/images/search-hout.jpg" alt="wood" /><a asp-route="showItemsByMaterialAndFromPrice" asp-route-material="@Material.Hout" asp-route-fromPrice=10>Artikels in hout vanaf 10 euro.</a>
+        </div>
+        <div class="card">
+            <img src="~/images/AvailableNow.jpg" alt="available" /><a asp-route="showAvailableItemsWithACertainFromPrice" asp-route-available="true" asp-route-fromPrice=5>Onmiddelijke beschikbare artikelen vanaf 5 euro.</a>
+        </div>
+        <div class="card">
+            <img src="~/images/DimensionSearch.jpg" alt="dimensionLarge" /><a asp-route="showItemsByDimensionWithACertainFromPrice" asp-route-dimension="@Dimension.Large" asp-route-fromPrice=10>Artikelen met afmeting Large vanaf 10 euro.</a>
+        </div>
+    </section>
+</article>

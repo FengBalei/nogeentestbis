@@ -1,0 +1,33 @@
+﻿@model PlatesDetailViewModel
+<article>
+    <h3 class="detail">
+        @Model.Type - @Model.Material
+    </h3>
+    <section class="product-detail">
+        <div class="image">
+            <img asp-append-version="true" class="detail-view" src="@ViewBag.ImageString" alt="@Model.Material" />
+        </div>
+        <div class="info">
+            <h4>Artikel categorie: @Model.Type</h4>
+            <p><small>Artikelnummer: @Model.Id</small></p>
+            <h5>Eigenschappen van deze:</h5>
+            <ul>
+                <li>@Model.Material</li>
+                <li>Vanaf: €@Model.FromPrice</li>
+            </ul>
+            <h5>Je kiest zelf nog:</h5>
+            <ul>
+                <li>Kleur</li>
+                <li>Font specificaties</li>
+                <li>Grootte:</li>
+            </ul>
+            <div class="size-container">
+                @foreach (string dimension in Enum.GetNames(typeof(Dimension)))
+                {
+                    <div class="size">@dimension</div>
+                }
+            </div>
+            <partial name="_PersonalizeAndOrderPartialView" />
+        </div>
+    </section>
+</article>

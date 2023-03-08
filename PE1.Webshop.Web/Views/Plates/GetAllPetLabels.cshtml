@@ -1,0 +1,20 @@
+﻿@model PlatesIndexViewModel
+
+<article>
+    <h2>Dieren ID labels</h2>
+    <p>Geef je trouwe viervoeter een medaille zodat hij nooit meer de weg kwijt kan zijn.</p>
+
+    <h3>Bekijk ons aanbod en klik om te personaliseren:</h3>
+    <section>
+        @foreach (PlatesDetailViewModel plate in Model.Plates)
+        {
+            <div class="card">
+                <a asp-controller="Plates" asp-action="ShowPlateDetail" asp-route-id="@plate.Id">
+                    <img asp-append-version="true" class="index-view" src="../images/@(plate.Type)-@(plate.Material).jpg" alt="@plate.Type-@plate.Material" />
+                    @plate.Type-@plate.Material
+                </a>
+            </div>
+        }
+    </section>
+</article>
+<partial name="PlatesNavigationPartialView" />

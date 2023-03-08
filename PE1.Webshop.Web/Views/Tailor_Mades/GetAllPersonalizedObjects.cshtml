@@ -1,0 +1,18 @@
+﻿@model Tailor_MadeIndexViewModel
+<article>
+    <h2>Gepersonaliseerde voorwerpen</h2>
+    <p>Een origineel cadeau nodig? Dan zijn onze gepersonaliseerde voorwerpen ideaal. Verras je kinderen of je geliefde of vrienden met een persoonlijke boodschap op een lepel, glas of zelf sleutelhanger.</p>
+
+    <h3>Bekijk ons aanbod en klik om te personaliseren:</h3>
+    <section>
+        @foreach (Tailor_MadeDetailViewModel tailorMade in Model.TailorMades)
+        {
+            <div class="card">
+                <a asp-controller="Tailor_Mades" asp-action="ShowTailorMadeDetail" asp-route-id="@tailorMade.Id">
+                    <img asp-append-version="true" class="index-view" src="/images/Tailor-Made-@(tailorMade.GiftObject).jpg" alt="@tailorMade.GiftObject" />
+                    @tailorMade.GiftObject
+                </a>
+            </div>
+        }
+    </section>
+</article>

@@ -1,0 +1,29 @@
+﻿
+<div class="text-center">
+    <h1 class="display-4">@ViewBag.Title</h1>
+    <h2>Welkom op dé website voor al uw gegevraveerde items.</h2>
+    <article>
+        <p>Een nieuw belplaatje nodig voor aan je bus? Of een duidelijk huisnummer voor aan je voordeur? Op zoek naar grote letters of cijfers voor in je etalage? Alles kan bij Losse Letters.</p>
+    </article>
+    <article>
+        <h3 class="Home">Materialen</h3>
+        <p>
+            Voor alle gravures bieden wij een vaste set aan materialen aan waaruit je zelf kan kiezen. Kies je voor onderhoudsvriendelijke plexi of eerder luxueus aluminium of hout? Je kan kiezen uit volgende types:
+            <ul>
+                @foreach (string material in Enum.GetNames(typeof(Material)))
+                {
+                    <li>@material</li>
+                }
+            </ul>
+        </p>
+    </article>
+    <article>
+        <h3 class="Home">Lettertypes</h3>
+        <p>
+            Wij bieden eveneens een ruime set van lettertypes aan. Geeft u de voorkeur aan strak en modern of eerder antiek en frivool. Geen probleem. Onze lijst telt meer dan 200 lettertypes. Voor elk wat wils!
+        </p>
+    </article>
+    <aside>
+        <a asp-controller="EngravingCategories" asp-action="Index"><div class="category-button"><p>Klik hier en ontdek onze verschillende categorieën.</p></div></a>
+    </aside>
+</div>
